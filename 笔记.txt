@@ -1,0 +1,111 @@
+sass编译
+sass 编译路径:放置路径
+sass监视路径变化
+sass --watch 编译路径:放置路径
+编译的四种格式
+nested 嵌套
+compact 紧凑
+expanded 扩展
+compressed 压缩
+编译四种格式的应用
+sass --watch 编译路径:放置路径 --style nested 嵌套
+sass --watch 编译路径:放置路径 --style compact 紧凑
+sass --watch 编译路径:放置路径 --style expanded 扩展
+sass --watch 编译路径:放置路径 --style compressed 压缩
+sass编译模式
+	ul{
+		font-size:10px;
+		li{
+			list-style:none;
+		}
+	}
+定义变量
+	$primary-color:#1269b5;
+	div{
+		background-color:$primary-color;
+	}
+	$primary-color变量名
+	#1269b5变量值
+	div background属性引用$primary-color;
+	变量可以定义多个值
+	$primary-border:1px solid $primary-color;
+	h1 .center{
+		border:$primary-border;
+	}
+嵌套的写法
+	nav{ //nav
+	 height:100px;
+		ul{ //nav ul
+			margin:0px;
+			li{ //nav ul li
+				float:left;
+				list-style:none;
+				padding:5px;
+				color:$primary-color;
+			}
+			a{
+				color:$primary-color;
+				padding:5px;
+				&:hover{//nav ul a :hover hover伪类的嵌套 
+					background:$hovers-color;
+					color:#fff;
+				}
+			}
+		}
+		& &-text{
+			font-size:12px;
+		}
+	}
+	&符直接调用父元素同时去掉后面的空格
+	属性的嵌套:
+	// 嵌套后
+	 body{
+		font:{
+			family:Arial;
+			size:15px;
+			weight:normal;
+		}
+	}
+	//嵌套之前
+	body{
+		font-family:Arial;
+		font-size:15px;
+		font-weight:normal;
+	}
+mixin混合
+	@mixin 名字(参数1,参数2...){
+		css属性
+	}
+	@mixin alert{
+		color:green;
+		background:#fcf8f3;
+	}
+	.alert-test{
+		@include alert;
+	}
+	@include调用@mixin
+	@mixin嵌套
+	@mixin alert{
+		color:green;
+		background:#fcf8f3;
+		a{//.alert-test a 
+			color:$primary-color;
+		}
+	}
+//@mixin混合嵌套参数
+	@mixin alert($test-color,$background){
+	color:$test-color;
+	background:$background;
+	a {
+		color:darken($test-color,10%);
+	}
+	}
+	.alert-test{
+		@include alert(#8a6d3b,#fcf8e3);
+	}
+	指定参数设置值
+	.alert-info{
+		@include alert($background:#d9edf7,$test-color:#31708f);
+	}
+sass样式
+darken加深颜色的值

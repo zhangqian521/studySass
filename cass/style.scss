@@ -1,0 +1,55 @@
+$primary-color:#1269b5;
+$hovers-color:green;
+$primary-border:1px solid $primary-color;
+div{
+	background-color:$primary-color;
+}
+div .box{
+	background-color:$primary-color;
+}
+h1 .center{
+	border:$primary-border;
+}
+nav{
+	height:100px;
+	ul{
+		margin:0px;
+		li{
+			float:left;
+			list-style:none;
+			padding:5px;
+			color:$primary-color;
+		}
+		a{
+			color:$primary-color;
+			padding:5px;
+			&:hover{
+				background:$hovers-color;
+				color:#fff;
+			}
+		}
+	}
+	& &-text{
+		font-size:12px;
+	}
+}
+body{
+	font:{
+		family:Arial;
+		size:15px;
+		weight:normal;
+	}
+}
+@mixin alert($test-color,$background){
+	color:$test-color;
+	background:$background;
+	a {
+		color:darken($test-color,10%);
+	}
+}
+.alert-test{
+	@include alert(#8a6d3b,#fcf8e3);
+}
+.alert-info{
+	@include alert($background:#d9edf7,$test-color:#31708f);
+}

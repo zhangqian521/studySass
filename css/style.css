@@ -1,0 +1,45 @@
+div {
+  background-color: #1269b5; }
+
+div .box {
+  background-color: #1269b5; }
+
+h1 .center {
+  border: 1px solid #1269b5; }
+
+nav {
+  height: 100px; }
+  nav ul {
+    margin: 0px; }
+    nav ul li {
+      float: left;
+      list-style: none;
+      padding: 5px;
+      color: #1269b5; }
+    nav ul a {
+      color: #1269b5;
+      padding: 5px; }
+      nav ul a:hover {
+        background: green;
+        color: #fff; }
+  nav nav-text {
+    font-size: 12px; }
+
+body {
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: normal; }
+
+.alert-test {
+  color: #8a6d3b;
+  background: #fcf8e3; }
+  .alert-test a {
+    color: #66512c; }
+
+.alert-info {
+  color: #31708f;
+  background: #d9edf7; }
+  .alert-info a {
+    color: #245269; }
+
+/*# sourceMappingURL=style.css.map */
